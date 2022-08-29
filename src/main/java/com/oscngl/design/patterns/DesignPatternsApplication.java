@@ -1,5 +1,6 @@
 package com.oscngl.design.patterns;
 
+import com.oscngl.design.patterns.builder.Product;
 import com.oscngl.design.patterns.factory.FileExporterFactory;
 import com.oscngl.design.patterns.singleton.*;
 
@@ -20,6 +21,14 @@ public class DesignPatternsApplication {
         );
         System.out.println(
                 FileExporterFactory.getInstance(FileExporterFactory.FileType.EXCEL).export("Test Content")
+        );
+
+        // BUILD DESIGN PATTERN
+        System.out.println(
+                new Product.ProductBuilder()
+                        .id(1L)
+                        .name("name")
+                        .build()
         );
 
     }
