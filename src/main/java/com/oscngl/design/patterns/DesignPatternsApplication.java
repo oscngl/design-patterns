@@ -2,6 +2,7 @@ package com.oscngl.design.patterns;
 
 import com.oscngl.design.patterns.builder.Product;
 import com.oscngl.design.patterns.decorator.*;
+import com.oscngl.design.patterns.facade.EncryptionFacade;
 import com.oscngl.design.patterns.factory.FileExporterFactory;
 import com.oscngl.design.patterns.singleton.*;
 
@@ -47,6 +48,13 @@ public class DesignPatternsApplication {
         System.out.println("Name:" + phone3.getName());
         System.out.println("Camera:" + phone3.getCameraCount());
         System.out.println("Price:" + phone3.getPrice());
+
+        // FACADE DESIGN PATTERN
+        String text = "text";
+        EncryptionFacade encryptionFacade = new EncryptionFacade();
+        encryptionFacade.encrypt(text, EncryptionFacade.EncType.AES);
+        encryptionFacade.encrypt(text, EncryptionFacade.EncType.MD5);
+        encryptionFacade.encrypt(text, EncryptionFacade.EncType.SHA);
 
     }
 
