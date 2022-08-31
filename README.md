@@ -7,3 +7,4 @@
 ### - Adapter Design Pattern
 ### - Composite Design Pattern
 ### - Prototype Design Pattern
+### - Observer Design Pattern
