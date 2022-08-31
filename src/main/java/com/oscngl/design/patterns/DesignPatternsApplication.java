@@ -12,7 +12,13 @@ import com.oscngl.design.patterns.composite.SalesDepartment;
 import com.oscngl.design.patterns.decorator.*;
 import com.oscngl.design.patterns.facade.EncryptionFacade;
 import com.oscngl.design.patterns.factory.FileExporterFactory;
+import com.oscngl.design.patterns.prototype.Bear;
+import com.oscngl.design.patterns.prototype.GrizzlyBear;
+import com.oscngl.design.patterns.prototype.TeddyBear;
 import com.oscngl.design.patterns.singleton.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DesignPatternsApplication {
 
@@ -82,6 +88,19 @@ public class DesignPatternsApplication {
         headDepartment.addDepartment(financialDepartment);
 
         headDepartment.printDepartmentName();
+
+        // PROTOTYPE DESIGN PATTERN
+        List<Bear> bears = List.of(
+                new GrizzlyBear(20000, 1500, "Black"),
+                new TeddyBear(50, 100, 20)
+        );
+
+        List<Bear> copyList = new ArrayList<>();
+        for (Bear bear: bears) {
+            copyList.add(bear.copy());
+        }
+
+        copyList.forEach(System.out::println);
 
     }
 
