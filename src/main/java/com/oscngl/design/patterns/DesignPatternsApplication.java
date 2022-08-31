@@ -5,6 +5,10 @@ import com.oscngl.design.patterns.adapter.Mercedes;
 import com.oscngl.design.patterns.adapter.MovableAdapter;
 import com.oscngl.design.patterns.adapter.MovableAdapterImpl;
 import com.oscngl.design.patterns.builder.Product;
+import com.oscngl.design.patterns.composite.Department;
+import com.oscngl.design.patterns.composite.FinancialDepartment;
+import com.oscngl.design.patterns.composite.HeadDepartment;
+import com.oscngl.design.patterns.composite.SalesDepartment;
 import com.oscngl.design.patterns.decorator.*;
 import com.oscngl.design.patterns.facade.EncryptionFacade;
 import com.oscngl.design.patterns.factory.FileExporterFactory;
@@ -68,6 +72,16 @@ public class DesignPatternsApplication {
         Bugatti bugatti = new Bugatti();
         MovableAdapter bugattiAdapter = new MovableAdapterImpl(bugatti);
         System.out.println("Bugatti's speed is " + bugattiAdapter.getSpeed() + " Kilometer per hour");
+
+        // COMPOSITE DESIGN PATTERN
+        Department salesDepartment = new SalesDepartment(1, "Sales department");
+        Department financialDepartment = new FinancialDepartment(2, "Financial department");
+        HeadDepartment headDepartment = new HeadDepartment(3, "Head department");
+
+        headDepartment.addDepartment(salesDepartment);
+        headDepartment.addDepartment(financialDepartment);
+
+        headDepartment.printDepartmentName();
 
     }
 
