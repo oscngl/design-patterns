@@ -6,3 +6,4 @@
 ### - Facade Design Pattern
 ### - Adapter Design Pattern
 ### - Composite Design Pattern
+### - Prototype Design Pattern
