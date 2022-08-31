@@ -1,5 +1,9 @@
 package com.oscngl.design.patterns;
 
+import com.oscngl.design.patterns.adapter.Bugatti;
+import com.oscngl.design.patterns.adapter.Mercedes;
+import com.oscngl.design.patterns.adapter.MovableAdapter;
+import com.oscngl.design.patterns.adapter.MovableAdapterImpl;
 import com.oscngl.design.patterns.builder.Product;
 import com.oscngl.design.patterns.decorator.*;
 import com.oscngl.design.patterns.facade.EncryptionFacade;
@@ -55,6 +59,15 @@ public class DesignPatternsApplication {
         encryptionFacade.encrypt(text, EncryptionFacade.EncType.AES);
         encryptionFacade.encrypt(text, EncryptionFacade.EncType.MD5);
         encryptionFacade.encrypt(text, EncryptionFacade.EncType.SHA);
+
+        // ADAPTER DESIGN PATTERN
+        Mercedes mercedes = new Mercedes();
+        MovableAdapter mercedesAdapter = new MovableAdapterImpl(mercedes);
+        System.out.println("Mercedes' speed is " + mercedesAdapter.getSpeed() + " Kilometer per hour");
+
+        Bugatti bugatti = new Bugatti();
+        MovableAdapter bugattiAdapter = new MovableAdapterImpl(bugatti);
+        System.out.println("Bugatti's speed is " + bugattiAdapter.getSpeed() + " Kilometer per hour");
 
     }
 
