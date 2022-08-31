@@ -5,3 +5,4 @@
 ### - Decorator Design Pattern
 ### - Facade Design Pattern
 ### - Adapter Design Pattern
+### - Composite Design Pattern
