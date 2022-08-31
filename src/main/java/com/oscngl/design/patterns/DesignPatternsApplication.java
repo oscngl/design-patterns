@@ -12,6 +12,8 @@ import com.oscngl.design.patterns.composite.SalesDepartment;
 import com.oscngl.design.patterns.decorator.*;
 import com.oscngl.design.patterns.facade.EncryptionFacade;
 import com.oscngl.design.patterns.factory.FileExporterFactory;
+import com.oscngl.design.patterns.observer.EmailObserver;
+import com.oscngl.design.patterns.observer.Subject;
 import com.oscngl.design.patterns.prototype.Bear;
 import com.oscngl.design.patterns.prototype.GrizzlyBear;
 import com.oscngl.design.patterns.prototype.TeddyBear;
@@ -101,6 +103,20 @@ public class DesignPatternsApplication {
         }
 
         copyList.forEach(System.out::println);
+
+        // OBSERVER DESIGN PATTERN
+        Subject subject = new Subject();
+
+        new EmailObserver("email1@email.com", subject);
+        new EmailObserver("email2@email.com", subject);
+
+        subject.setMessage("Message 1");
+
+        new EmailObserver("email3@email.com", subject);
+
+        subject.setMessage("Message 2");
+
+
 
     }
 
