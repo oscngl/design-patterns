@@ -4,3 +4,4 @@
 ### - Builder Design Pattern
 ### - Decorator Design Pattern
 ### - Facade Design Pattern
+### - Adapter Design Pattern
